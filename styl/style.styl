@@ -1,0 +1,560 @@
+body
+	background-color #61C791
+
+header
+	padding 35px 0
+	text-align center
+	color white
+
+	+above(768px)
+		padding 0
+
+	h1
+		margin 0
+		padding 0
+		text-transform uppercacse
+
+.container
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+	margin 0 auto
+	max-width 660px
+	width 100%
+	height 100%
+
+	+above(768px)
+		height auto
+
+.layout
+	display block
+	position relative
+	// max-width 1200px
+	// margin 0 auto
+
+.col-2
+	display inline-block
+	position relative
+	width 100%
+	padding-left 0
+	padding-right 0
+
+	button:first-child
+		margin 0px auto
+
+		+above(768px)
+			margin 30px auto
+
+	+above(768px)
+		width 49%
+
+.buttons-container
+	position relative
+
+	.btn
+		display block
+		position relative
+		top 17.5%
+		margin 30px auto
+		padding 5px
+		max-width 250px
+		min-width 150px
+
+		border none
+		background-color: rgba(0, 140, 114, 1)
+
+		overflow hidden
+		color inherit
+		cursor pointer
+		vertical-align middle
+		z-index 1
+		text-align center
+
+		&.button-1,
+		&.button-2,
+		&.button-3,
+		&.button-4
+			padding 0
+			transition background 600ms ease-out, border 300ms ease-out
+
+		&.button-5,
+		&.button-6,
+		&.button-7,
+		&.button-8
+			padding 0
+			background-color: rgba(0, 115, 105, .5);
+
+			&::before,
+			&::after
+				content ''
+				display block
+				position absolute
+
+			&::before
+				top 0
+				left 0
+				width 210px
+				height 64px
+				background-color rgba(0, 140, 114, 1)
+				transition background 400ms ease-out
+
+			&::after
+				top calc( 50% - 125px )
+				left calc( 50% - 125px )
+				width 250px
+				height 250px
+				border-radius 50%
+				background-color rgba(0, 115, 105, .05)
+				transform translateX(100%) scale(1)
+				transition transform 300ms ease-out, background 200ms ease-out, opacity 200ms ease-out
+
+			.innerlay
+				display block
+				position absolute
+				width 250px
+				height 250px
+				background-color rgba(0, 115, 105, 1)
+				border-radius 50%
+				transform scale(1)
+				opacity 0
+				transition transform 500ms ease-out, opacity 300ms ease-out
+
+			a
+				overflow initial
+				opacity 0.95
+				z-index 2
+
+				&::after
+					content ''
+
+		&:focus
+			outline none
+
+		.innerlay
+			&::before,
+			&::after
+				content ''
+				display block
+				position absolute
+				width 250px
+				height 250px
+				border-radius 50%
+				background-color rgba(2, 166, 118, .25)
+
+			&::before
+				top calc( 50% - 125px )
+				//left 0
+				transform translateX(-100%)
+				transition transform 500ms ease-out
+
+			&::after
+				top calc( 50% - 125px )
+				//right 0
+				transform translateX(100%)
+				transition transform 500ms ease-out
+
+		a
+			display block
+			position relative
+			max-width 250px
+			min-width 150px
+			height auto
+			margin 0
+			padding 20px 30px
+
+			color rgba(255, 255, 255, .95)
+
+			font-size 1em
+			font-weight bold
+			letter-spacing 1px
+			text-decoration none
+			text-shadow 0 0 1px rgba(255, 255, 255, .3)
+			text-transform uppercase
+
+			opacity .95
+			outline none
+			overflow hidden
+			transition background 300ms ease-out, text-shadow 300ms ease-out
+			z-index 1
+
+			&::before,
+			&::after
+				display block
+				position absolute
+
+			&::before
+				content ''
+				width 250px
+				height 250px
+				border-radius 50%
+
+			&::after
+				content 'Button'
+
+			&:hover,
+			&:focus
+				outline none
+
+
+.btn.button-1
+	&::before
+		content ''
+		display inline-block
+		position absolute
+		top calc(50% - 125px)
+		left calc(50% - 125px)
+		width 250px
+		height 250px
+		color transparent
+		background-color rgba(2, 166, 118, .5)
+		border-radius 50%
+		transition transform 400ms ease-out
+		transform scale(0)
+
+	&:not(:hover)::before
+		transform scale(1)
+
+	a
+		&::before
+			top calc(50% - 125px)
+			left calc(50% - 125px)
+			color transparent
+			background-color rgba(2, 166, 118, .25)
+			opacity 0
+			transform scale(0)
+			transition transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out
+
+		&::after
+			top 35%
+			left 0
+			width 100%
+			opacity 0
+			transform scale(0)
+			transition transform 300ms ease-out, opacity 300ms ease-out
+
+		&:hover::before
+			transform scale(1)
+			opacity 1
+			color white
+
+		&:hover::after
+			transition-delay 100ms
+			transform scale(1.025)
+			opacity 1
+
+
+.btn.button-2
+	&::before,
+	&::after
+		content ''
+		display inline-block
+		position absolute
+		top 35%
+		left 0
+		width 100%
+		color #fff
+		text-decoration none
+		text-transform uppercase
+		letter-spacing 1px
+		font-size 1em
+		font-weight bold
+		// transform scale(1)
+
+		transition letter-spacing 400ms ease-out, transform 400ms ease-out, opacity 300ms ease-out, width 300ms ease-out
+
+	&::before
+		letter-spacing 1px
+		opacity 1
+
+	&::after
+		content 'Button'
+		letter-spacing -15px
+		opacity 0
+		z-index 1
+
+
+	&:hover
+		&::before
+			opacity 0
+
+		&::after
+			width 100%
+			opacity 1
+			letter-spacing 1px
+
+		.innerlay::before,
+		.innerlay::after
+			transform translateX(0)
+
+		a
+			&::before
+				transition-delay 150ms
+				transform scale(1)
+				opacity 1
+				color white
+
+	.innerlay::before,
+	.innerlay::after
+		top calc( 50% - 125px )
+		transition transform 500ms ease-out
+
+	.innerlay::before
+		left 0
+		transform translateX(-100%)
+
+	.innerlay::after
+		right 0
+		transform translateX(100%)
+
+	a
+		opacity 1
+
+		&::before
+			top calc(50% - 125px)
+			left calc(50% - 125px)
+			background-color rgba(0, 115, 105, .5)
+			color transparent
+			opacity 0
+			z-index 0
+
+			transition transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out
+			transform scale(0)
+
+		&::after
+			content 'Button'
+			top calc(50% - 125px)
+			left calc(50% - 125px)
+
+
+.btn.button-3
+	.innerlay::before,
+	.innerlay::after
+		top calc(50% - 125px) !important
+		left calc(50% - 125px) !important
+		opacity 0
+		transform scale(0)
+		transition transform 400ms ease-out, opacity 300ms ease-out, color 300ms ease-out
+
+	.innerlay::before
+		background-color rgba(2, 166, 118, .25)
+
+	.innerlay::after
+		color transparent
+		background-color rgba(2, 166, 118, .5)
+
+	&:hover
+		.innerlay::before
+			opacity 1
+			transform scale(1)
+
+		.innerlay::after
+			transition-delay 150ms
+			opacity 1
+			transform scale(1)
+
+	a
+		opacity 1
+
+		&::after
+			content '' !important
+
+.btn.button-4
+	.innerlay-1::before,
+	.innerlay-1::after,
+	.innerlay-2::before,
+	.innerlay-2::after
+		content ''
+		display block
+		position absolute
+		top calc( 50% - 125px )
+		left calc( 50% - 125px )
+		width 250px
+		height 250px
+		border-radius 50%
+		opacity .25
+		transition transform 400ms ease-out, opacity 300ms ease-out, color 300ms ease-out
+
+	.innerlay-1::before,
+	.innerlay-1::after
+		background-color rgba(2, 166, 118, .25)
+		transform scale(.25) rotate(45deg)
+		transform-origin right bottom
+
+	.innerlay-2::before,
+	.innerlay-2::after
+		background-color rgba(0, 115, 105, .5)
+		transform scale(.25) rotate(-45deg) translateX(100%)
+		transform-origin right top
+
+	.innerlay-1::after,
+	.innerlay-2::after
+		color transparent
+
+	a
+		background-color transparent
+		opacity 1
+
+		&::after
+			content '' !important
+
+	&:hover
+		.innerlay-1::before,
+		.innerlay-2::before,
+		.innerlay-1::after,
+		.innerlay-2::after
+			opacity 1
+
+		.innerlay-1::before,
+		.innerlay-1::after
+			transform scale(1) rotate(0deg)
+
+		.innerlay-2::before,
+		.innerlay-2::after
+			transform scale(1) rotate(0deg) translateX(0)
+
+		.innerlay-2::before
+			transition-delay 200ms
+
+		.innerlay-2::after
+			transition-delay 300ms
+
+.btn.button-5
+	.innerlay
+		top calc( 50% - 125px )
+		left -200%
+
+	a
+		&::before
+			top calc( 50% - 125px )
+			left -100%
+			background-color rgba(0, 115, 105, .5)
+			transform scale(.5)
+			opacity 0
+			overflow hidden
+			transition transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out
+
+		&::after
+			content 'Button'
+			display inline-block
+			position absolute
+			top 35%
+			left 0
+			width 100%
+			opacity 1
+
+	&:hover
+		a::before
+			transform: scale(1);
+			opacity: 1;
+			color: white;
+
+		.innerlay
+			transition-delay: 250ms;
+			opacity: 1;
+			transform: scale(4.5);
+
+.btn.button-6
+	.innerlay
+		top 200%
+		left calc( 50% - 125px )
+
+	a
+		&::before
+			top 100%
+			left calc( 50% - 125px )
+			background-color rgba(0, 115, 105, .5)
+			transform scale(.5)
+			opacity 0
+			overflow hidden
+			transition transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out
+
+		&::after
+			content 'Button' !important
+			display inline-block
+			position absolute
+			top 35%
+			left 0
+			width 100%
+			opacity 1
+
+	&:hover
+		a::before
+			transform: scale(1.25);
+			opacity: 1;
+			color: white;
+
+		.innerlay
+			transition-delay: 300ms;
+			opacity: 1;
+			transform: scale(2.5);
+
+.btn.button-7
+	.innerlay
+		top calc( 50% - 125px )
+		right -200%
+
+	a
+		&::before
+			top calc( 50% - 125px )
+			right -100%
+			background-color rgba(0, 115, 105, .5)
+			transform scale(.5)
+			opacity 0
+			overflow hidden
+			transition transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out
+
+		&::after
+			content 'Button'
+			display inline-block
+			position absolute
+			top 35%
+			left 0
+			width 100%
+			opacity 1
+
+	&:hover
+		a::before
+			transform scale(1);
+			opacity 1;
+			color white;
+
+		.innerlay
+			transition-delay 250ms;
+			opacity 1;
+			transform scale(4.5);
+
+.btn.button-8
+	.innerlay
+		bottom 100%
+		left calc( 50% - 125px )
+
+	a
+		&::before
+			bottom 100%
+			left calc( 50% - 125px )
+			background-color rgba(0, 115, 105, .5)
+			transform scale(.5)
+			opacity 0
+			overflow hidden
+			transition transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out
+
+		&::after
+			content 'Button' !important
+			display inline-block
+			position absolute
+			top 35%
+			left 0
+			width 100%
+			opacity 1
+
+	&:hover
+		a::before
+			transform scale(1.25)
+			opacity 1
+			color white
+
+		.innerlay
+			transition-delay 400ms
+			opacity 1
+			transform scale(2.5)
