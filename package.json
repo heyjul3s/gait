@@ -1,13 +1,12 @@
 {
-  "name": "lorem",
+  "name": "gait",
   "version": "1.0.0",
-  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Julian Low",
   "license": "MIT",
-  "keywords": [],
+  "keywords": ['hover', 'buttons', 'css', 'stylus'],
   "description": "",
   "devDependencies": {
     "gulp": "^3.9.1",
