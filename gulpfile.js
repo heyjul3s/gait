@@ -10,7 +10,8 @@
         jeet          = require('jeet'),
         rupture       = require('rupture'),
         typographic   = require('typographic'),
-        autoprefixer        = require('gulp-autoprefixer');
+        autoprefixer  = require('gulp-autoprefixer');
+
 
     var paths = {
         src : {
@@ -49,7 +50,6 @@
     gulp.task('stylus', function(){
         return gulp.src( paths.src.stylus )
             .pipe( plumber() )
-            .pipe( sourcemaps.init() )
             .pipe( stylus({
 
             paths: [
@@ -57,15 +57,8 @@
                 paths.src.stylus
             ],
 
-            import: [
-                // 'jeet/stylus/jeet',
-                'nib',
-                'rupture/rupture',
-            ],
-
             use: [
                 nib(),
-                typographic(),
                 rupture(),
                 jeet()
             ],
@@ -74,7 +67,6 @@
 
         }))
         .pipe( autoprefixer() )
-        .pipe( sourcemaps.write('.') )
         .pipe( gulp.dest( paths.dest.css ) );
     });
 

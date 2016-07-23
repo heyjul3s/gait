@@ -8,20 +8,22 @@ html(lang='en-AU')
         meta(name='description' content='CSS button hover effects')
         meta(name='author' content='Julian Low')
         title Gait
-        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css')
+        link(rel='shortcut icon' href="favicon.ico" type='image/x-icon')
+        link(rel='icon' href='favicon.ico' type='image/x-icon')
+        link( href='http://fonts.googleapis.com/css?family=Titillium+Web:300,400,700,900' rel='stylesheet' type='text/css' )
         link(rel='stylesheet' href='dist/style.css')
-        link(href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css')
+        link(rel='stylesheet' href='dist/icons.css')
 
     body
         .container
             .layout
 
-                header
+                header.site-header
                     h1 Gait
                     p a small collection of CSS button hover effects
 
                 .buttons-container
-                    .col-2
+                    .col-3
                         button.btn.button-1
                             span.innerlay
                             a(href='#').anchor Button
@@ -39,7 +41,7 @@ html(lang='en-AU')
                             span.innerlay-2
                             a(href='#').anchor Button
 
-                    .col-2
+                    .col-3
                         button.btn.sticky.button-5
                             span.innerlay
                             a(href='#').anchor Button
@@ -55,3 +57,31 @@ html(lang='en-AU')
                         button.btn.sticky.button-8
                             span.innerlay
                             a(href='#').anchor Button
+
+                    .col-3
+                        button.btn.sticky.button-5
+                            span.innerlay
+                            a(href='#').anchor Button
+
+                        button.btn.sticky.button-6
+                            span.innerlay
+                            a(href='#').anchor Button
+
+                        button.btn.sticky.button-7
+                            span.innerlay
+                            a(href='#').anchor Button
+
+                        button.btn.sticky.button-8
+                            span.innerlay
+                            a(href='#').anchor Button
+
+                footer.site-footer
+                    a(href='http://heyjul.es')
+                        span.icon-arrow-left
+                        | back to home
+
+                    span.slash /
+
+                    a(href='http://github.com/heyjul3s/gait')
+                        | view on github
+                        span.icon-arrow-right

@@ -6,7 +6,7 @@
   },
   "author": "Julian Low",
   "license": "MIT",
-  "keywords": ['hover', 'buttons', 'css', 'stylus'],
+  "keywords": ["gulp", "pug", "stylus"],
   "description": "",
   "devDependencies": {
     "gulp": "^3.9.1",

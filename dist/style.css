@@ -1,31 +1,59 @@
+html,
 body {
-  background-color: #61c791;
+  min-height: 100%;
 }
-header {
-  padding: 35px 0;
-  text-align: center;
-  color: #fff;
-}
-@media only screen and (min-width: 768px) {
-  header {
-    padding: 0;
-  }
-}
-header h1 {
+body {
+  height: 100vh;
   margin: 0;
   padding: 0;
-  text-transform: uppercacse;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #61c791;
+  color: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+ul li,
+ol li {
+  display: inline-block;
+}
+img {
+  max-width: 100%;
+  margin: 0;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+}
+a:focus,
+a:active {
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  text-shadow: none;
+}
+p {
+  line-height: 1.5;
 }
 .container {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin: 0 auto;
-  max-width: 660px;
+          transform: translate(-50%, -50%);
+  max-width: 1200px;
   width: 100%;
   height: 100%;
+  padding: 35px 20px;
+  margin: 0 auto;
 }
 @media only screen and (min-width: 768px) {
   .container {
@@ -36,37 +64,77 @@ header h1 {
   display: block;
   position: relative;
 }
-.col-2 {
+.site-header {
+  padding: 0;
+  text-align: center;
+  color: #fff;
+}
+@media only screen and (min-width: 768px) {
+  .site-header {
+    padding: 0;
+  }
+}
+.site-header h1 {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercacse;
+}
+.site-footer {
+  text-align: center;
+}
+.site-footer .slash {
   display: inline-block;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+.site-footer a {
+  position: relative;
+  color: #fff;
+}
+.site-footer a span {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+.site-footer a .icon-arrow-left,
+.site-footer a .icon-arrow-right {
+  font-size: 12px;
+}
+.col-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   width: 100%;
   padding-left: 0;
   padding-right: 0;
 }
-.col-2 button:first-child {
-  margin: 0px auto;
-}
 @media only screen and (min-width: 768px) {
-  .col-2 button:first-child {
-    margin: 30px auto;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .col-2 {
-    width: 49%;
+  .col-3 {
+    width: 33.33%;
   }
 }
 .buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   position: relative;
+  padding: 40px 20px;
 }
 .buttons-container .btn {
   display: block;
   position: relative;
   top: 17.5%;
-  margin: 30px auto;
+  margin: 15px auto;
   padding: 5px;
   max-width: 250px;
-  min-width: 150px;
+  min-width: 200px;
   border: none;
   background-color: #008c72;
   overflow: hidden;
@@ -126,8 +194,7 @@ header h1 {
   border-radius: 50%;
   background-color: rgba(0,115,105,0.05);
   -webkit-transform: translateX(100%) scale(1);
-  transform: translateX(100%) scale(1);
-  -webkit-transition: -webkit-transform 300ms ease-out, background 200ms ease-out, opacity 200ms ease-out;
+          transform: translateX(100%) scale(1);
   -webkit-transition: background 200ms ease-out, opacity 200ms ease-out, -webkit-transform 300ms ease-out;
   transition: background 200ms ease-out, opacity 200ms ease-out, -webkit-transform 300ms ease-out;
   transition: transform 300ms ease-out, background 200ms ease-out, opacity 200ms ease-out;
@@ -144,11 +211,8 @@ header h1 {
   background-color: #007369;
   border-radius: 50%;
   -webkit-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  -webkit-transition: -webkit-transform 500ms ease-out, opacity 300ms ease-out;
   -webkit-transition: opacity 300ms ease-out, -webkit-transform 500ms ease-out;
   transition: opacity 300ms ease-out, -webkit-transform 500ms ease-out;
   transition: transform 500ms ease-out, opacity 300ms ease-out;
@@ -160,8 +224,6 @@ header h1 {
 .buttons-container .btn.button-8 a {
   overflow: initial;
   opacity: 0.95;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
-  filter: alpha(opacity=95);
   z-index: 2;
 }
 .buttons-container .btn.button-5 a::after,
@@ -186,7 +248,7 @@ header h1 {
 .buttons-container .btn .innerlay::before {
   top: calc(50% - 125px);
   -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+          transform: translateX(-100%);
   -webkit-transition: -webkit-transform 500ms ease-out;
   transition: -webkit-transform 500ms ease-out;
   transition: transform 500ms ease-out;
@@ -195,7 +257,7 @@ header h1 {
 .buttons-container .btn .innerlay::after {
   top: calc(50% - 125px);
   -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+          transform: translateX(100%);
   -webkit-transition: -webkit-transform 500ms ease-out;
   transition: -webkit-transform 500ms ease-out;
   transition: transform 500ms ease-out;
@@ -217,8 +279,6 @@ header h1 {
   text-shadow: 0 0 1px rgba(255,255,255,0.3);
   text-transform: uppercase;
   opacity: 0.95;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
-  filter: alpha(opacity=95);
   outline: none;
   overflow: hidden;
   -webkit-transition: background 300ms ease-out, text-shadow 300ms ease-out;
@@ -259,11 +319,11 @@ header h1 {
   transition: transform 400ms ease-out;
   transition: transform 400ms ease-out, -webkit-transform 400ms ease-out;
   -webkit-transform: scale(0);
-  transform: scale(0);
+          transform: scale(0);
 }
 .btn.button-1:not(:hover)::before {
   -webkit-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
 }
 .btn.button-1 a::before {
   top: calc(50% - 125px);
@@ -271,11 +331,8 @@ header h1 {
   color: transparent;
   background-color: rgba(2,166,118,0.25);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: -webkit-transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
+          transform: scale(0);
   -webkit-transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
@@ -286,11 +343,8 @@ header h1 {
   left: 0;
   width: 100%;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: -webkit-transform 300ms ease-out, opacity 300ms ease-out;
+          transform: scale(0);
   -webkit-transition: opacity 300ms ease-out, -webkit-transform 300ms ease-out;
   transition: opacity 300ms ease-out, -webkit-transform 300ms ease-out;
   transition: transform 300ms ease-out, opacity 300ms ease-out;
@@ -298,22 +352,16 @@ header h1 {
 }
 .btn.button-1 a:hover::before {
   -webkit-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   color: #fff;
 }
 .btn.button-1 a:hover::after {
   -webkit-transition-delay: 100ms;
-  transition-delay: 100ms;
+          transition-delay: 100ms;
   -webkit-transform: scale(1.025);
-  transform: scale(1.025);
+          transform: scale(1.025);
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
 }
 .btn.button-2::before,
 .btn.button-2::after {
@@ -329,7 +377,6 @@ header h1 {
   letter-spacing: 1px;
   font-size: 1em;
   font-weight: bold;
-  -webkit-transition: letter-spacing 400ms ease-out, -webkit-transform 400ms ease-out, opacity 300ms ease-out, width 300ms ease-out;
   -webkit-transition: letter-spacing 400ms ease-out, opacity 300ms ease-out, width 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: letter-spacing 400ms ease-out, opacity 300ms ease-out, width 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: letter-spacing 400ms ease-out, transform 400ms ease-out, opacity 300ms ease-out, width 300ms ease-out;
@@ -338,45 +385,32 @@ header h1 {
 .btn.button-2::before {
   letter-spacing: 1px;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
 }
 .btn.button-2::after {
   content: 'Button';
   letter-spacing: -15px;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   z-index: 1;
 }
 .btn.button-2:hover::before {
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
 }
 .btn.button-2:hover::after {
   width: 100%;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   letter-spacing: 1px;
 }
 .btn.button-2:hover .innerlay::before,
 .btn.button-2:hover .innerlay::after {
   -webkit-transform: translateX(0);
-  transform: translateX(0);
+          transform: translateX(0);
 }
 .btn.button-2:hover a::before {
   -webkit-transition-delay: 150ms;
-  transition-delay: 150ms;
+          transition-delay: 150ms;
   -webkit-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   color: #fff;
 }
 .btn.button-2 .innerlay::before,
@@ -390,18 +424,15 @@ header h1 {
 .btn.button-2 .innerlay::before {
   left: 0;
   -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 .btn.button-2 .innerlay::after {
   right: 0;
   -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+          transform: translateX(100%);
 }
 .btn.button-2 a {
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
 }
 .btn.button-2 a::before {
   top: calc(50% - 125px);
@@ -409,16 +440,13 @@ header h1 {
   background-color: rgba(0,115,105,0.5);
   color: transparent;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   z-index: 0;
-  -webkit-transition: -webkit-transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
   -webkit-transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
   transition: transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   -webkit-transform: scale(0);
-  transform: scale(0);
+          transform: scale(0);
 }
 .btn.button-2 a::after {
   content: 'Button';
@@ -430,11 +458,8 @@ header h1 {
   top: calc(50% - 125px) !important;
   left: calc(50% - 125px) !important;
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: -webkit-transform 400ms ease-out, opacity 300ms ease-out, color 300ms ease-out;
+          transform: scale(0);
   -webkit-transition: opacity 300ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: opacity 300ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: transform 400ms ease-out, opacity 300ms ease-out, color 300ms ease-out;
@@ -449,27 +474,18 @@ header h1 {
 }
 .btn.button-3:hover .innerlay::before {
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   -webkit-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
 }
 .btn.button-3:hover .innerlay::after {
   -webkit-transition-delay: 150ms;
-  transition-delay: 150ms;
+          transition-delay: 150ms;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   -webkit-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
 }
 .btn.button-3 a {
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
 }
 .btn.button-3 a::after {
   content: '' !important;
@@ -487,9 +503,6 @@ header h1 {
   height: 250px;
   border-radius: 50%;
   opacity: 0.25;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
-  filter: alpha(opacity=25);
-  -webkit-transition: -webkit-transform 400ms ease-out, opacity 300ms ease-out, color 300ms ease-out;
   -webkit-transition: opacity 300ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: opacity 300ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: transform 400ms ease-out, opacity 300ms ease-out, color 300ms ease-out;
@@ -499,17 +512,17 @@ header h1 {
 .btn.button-4 .innerlay-1::after {
   background-color: rgba(2,166,118,0.25);
   -webkit-transform: scale(0.25) rotate(45deg);
-  transform: scale(0.25) rotate(45deg);
+          transform: scale(0.25) rotate(45deg);
   -webkit-transform-origin: right bottom;
-  transform-origin: right bottom;
+          transform-origin: right bottom;
 }
 .btn.button-4 .innerlay-2::before,
 .btn.button-4 .innerlay-2::after {
   background-color: rgba(0,115,105,0.5);
   -webkit-transform: scale(0.25) rotate(-45deg) translateX(100%);
-  transform: scale(0.25) rotate(-45deg) translateX(100%);
+          transform: scale(0.25) rotate(-45deg) translateX(100%);
   -webkit-transform-origin: right top;
-  transform-origin: right top;
+          transform-origin: right top;
 }
 .btn.button-4 .innerlay-1::after,
 .btn.button-4 .innerlay-2::after {
@@ -518,9 +531,6 @@ header h1 {
 .btn.button-4 a {
   background-color: transparent;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
 }
 .btn.button-4 a::after {
   content: '' !important;
@@ -530,27 +540,24 @@ header h1 {
 .btn.button-4:hover .innerlay-1::after,
 .btn.button-4:hover .innerlay-2::after {
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
 }
 .btn.button-4:hover .innerlay-1::before,
 .btn.button-4:hover .innerlay-1::after {
   -webkit-transform: scale(1) rotate(0deg);
-  transform: scale(1) rotate(0deg);
+          transform: scale(1) rotate(0deg);
 }
 .btn.button-4:hover .innerlay-2::before,
 .btn.button-4:hover .innerlay-2::after {
   -webkit-transform: scale(1) rotate(0deg) translateX(0);
-  transform: scale(1) rotate(0deg) translateX(0);
+          transform: scale(1) rotate(0deg) translateX(0);
 }
 .btn.button-4:hover .innerlay-2::before {
   -webkit-transition-delay: 200ms;
-  transition-delay: 200ms;
+          transition-delay: 200ms;
 }
 .btn.button-4:hover .innerlay-2::after {
   -webkit-transition-delay: 300ms;
-  transition-delay: 300ms;
+          transition-delay: 300ms;
 }
 .btn.button-5 .innerlay {
   top: calc(50% - 125px);
@@ -561,12 +568,9 @@ header h1 {
   left: -100%;
   background-color: rgba(0,115,105,0.5);
   -webkit-transform: scale(0.5);
-  transform: scale(0.5);
+          transform: scale(0.5);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   overflow: hidden;
-  -webkit-transition: -webkit-transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
   -webkit-transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
@@ -580,28 +584,19 @@ header h1 {
   left: 0;
   width: 100%;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
 }
 .btn.button-5:hover a::before {
   -webkit-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   color: #fff;
 }
 .btn.button-5:hover .innerlay {
   -webkit-transition-delay: 250ms;
-  transition-delay: 250ms;
+          transition-delay: 250ms;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   -webkit-transform: scale(4.5);
-  transform: scale(4.5);
+          transform: scale(4.5);
 }
 .btn.button-6 .innerlay {
   top: 200%;
@@ -612,12 +607,9 @@ header h1 {
   left: calc(50% - 125px);
   background-color: rgba(0,115,105,0.5);
   -webkit-transform: scale(0.5);
-  transform: scale(0.5);
+          transform: scale(0.5);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   overflow: hidden;
-  -webkit-transition: -webkit-transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
   -webkit-transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
@@ -631,28 +623,19 @@ header h1 {
   left: 0;
   width: 100%;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
 }
 .btn.button-6:hover a::before {
   -webkit-transform: scale(1.25);
-  transform: scale(1.25);
+          transform: scale(1.25);
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   color: #fff;
 }
 .btn.button-6:hover .innerlay {
   -webkit-transition-delay: 300ms;
-  transition-delay: 300ms;
+          transition-delay: 300ms;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   -webkit-transform: scale(2.5);
-  transform: scale(2.5);
+          transform: scale(2.5);
 }
 .btn.button-7 .innerlay {
   top: calc(50% - 125px);
@@ -663,12 +646,9 @@ header h1 {
   right: -100%;
   background-color: rgba(0,115,105,0.5);
   -webkit-transform: scale(0.5);
-  transform: scale(0.5);
+          transform: scale(0.5);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   overflow: hidden;
-  -webkit-transition: -webkit-transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
   -webkit-transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
@@ -682,28 +662,19 @@ header h1 {
   left: 0;
   width: 100%;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
 }
 .btn.button-7:hover a::before {
   -webkit-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   color: #fff;
 }
 .btn.button-7:hover .innerlay {
   -webkit-transition-delay: 250ms;
-  transition-delay: 250ms;
+          transition-delay: 250ms;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   -webkit-transform: scale(4.5);
-  transform: scale(4.5);
+          transform: scale(4.5);
 }
 .btn.button-8 .innerlay {
   bottom: 100%;
@@ -714,12 +685,9 @@ header h1 {
   left: calc(50% - 125px);
   background-color: rgba(0,115,105,0.5);
   -webkit-transform: scale(0.5);
-  transform: scale(0.5);
+          transform: scale(0.5);
   opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
   overflow: hidden;
-  -webkit-transition: -webkit-transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
   -webkit-transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: opacity 200ms ease-out, color 300ms ease-out, -webkit-transform 400ms ease-out;
   transition: transform 400ms ease-out, opacity 200ms ease-out, color 300ms ease-out;
@@ -733,28 +701,17 @@ header h1 {
   left: 0;
   width: 100%;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
 }
 .btn.button-8:hover a::before {
   -webkit-transform: scale(1.25);
-  transform: scale(1.25);
+          transform: scale(1.25);
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   color: #fff;
 }
 .btn.button-8:hover .innerlay {
   -webkit-transition-delay: 400ms;
-  transition-delay: 400ms;
+          transition-delay: 400ms;
   opacity: 1;
-  -ms-filter: none;
-  -webkit-filter: none;
-          filter: none;
   -webkit-transform: scale(2.5);
-  transform: scale(2.5);
+          transform: scale(2.5);
 }
-
-/*# sourceMappingURL=style.css.map */

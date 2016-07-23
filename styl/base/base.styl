@@ -1,0 +1,98 @@
+html,
+body
+    min-height 100%
+
+
+body
+    // padding 35px 0
+    height 100vh
+    margin 0
+    padding 0
+    overflow-x hidden
+    overflow-y scroll
+    font-family base-font
+    background-color body-bg
+    color white
+
+*
+    box-sizing border-box;
+
+
+ul,
+ol
+    list-style none
+
+    li
+        display inline-block
+
+
+img
+    max-width 100%;
+    margin 0;
+    vertical-align middle;
+
+
+a
+    text-decoration none
+
+    &:focus,
+    &:active
+        outline none
+        border none
+        appearance none
+        text-shadow none
+
+p
+    line-height 1.5
+
+.container
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    max-width 1200px
+    width 100%
+    height 100%
+    padding 35px 20px
+    margin 0 auto
+
+    +above(tablet-portrait)
+        height auto
+
+.layout
+	display block
+	position relative
+
+.site-header
+	padding 0
+	text-align center
+	color white
+
+	+above(768px)
+		padding 0
+
+	h1
+		margin 0
+		padding 0
+		text-transform uppercacse
+
+.site-footer
+    text-align center
+
+    .slash
+        display inline-block
+        margin 0 10px
+        vertical-align middle
+
+    a
+        position relative
+        color white
+
+        span
+            display inline-block
+            vertical-align middle
+            margin 0 5px
+
+        .icon-arrow-left,
+        .icon-arrow-right
+            font-size 12px
